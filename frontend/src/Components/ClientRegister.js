@@ -38,7 +38,7 @@ const ClientRegister = () => {
             email,password1, adharCard, panCard, buildingName, flatNumber,
             streetName, pinCode } = data;
         
-        const response = await fetch("http://localhost:5050/client/clientregister", {
+        const response = await fetch("https://crawford2u.onrender.com/client/clientregister", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

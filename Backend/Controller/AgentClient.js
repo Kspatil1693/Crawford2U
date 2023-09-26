@@ -39,7 +39,7 @@ exports.registerAgent = (async (request, response, next) => {
         if (pinCode && typeof pinCode === 'string' && pinCode.length >= 6) {
             var agentCodeData = pinCode.slice(3, 6);
         }
-        console.log("agentCodeData....", pinCode.slice(3, 6));
+       // console.log("agentCodeData....", pinCode.slice(3, 6));
           
             
          let areaCodeLetter;
