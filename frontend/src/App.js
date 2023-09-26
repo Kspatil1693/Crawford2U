@@ -20,7 +20,7 @@ function App() {
           <Route path='/' />
           <Route path="/agentLogout" element={ <AgentLogout/>}/>
           <Route path="/clientLogout" element={<ClientLogout/>} />
-          <Route path="https://crawford2u.onrender.com/agent/register" element={ <AgentRegister/>}/>
+          <Route path="/agent/register" element={ <AgentRegister/>}/>
           <Route path="/clientRegister" element={<ClientRegister />} />
           <Route path="/agentLogin" element={<AgentLogin/> } />
           <Route path="/clientLogin"element={<ClientLogin/>}/>

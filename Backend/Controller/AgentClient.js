@@ -38,8 +38,10 @@ exports.registerAgent = (async (request, response, next) => {
         }
         if (pinCode && typeof pinCode === 'string' && pinCode.length >= 6) {
             var agentCodeData = pinCode.slice(3, 6);
+            return agentCodeData;
+            
         }
-       // console.log("agentCodeData....", pinCode.slice(3, 6));
+        console.log("agentCodeData....", pinCode.slice(3, 6));
           
             
          let areaCodeLetter;
@@ -100,7 +102,7 @@ exports.registerAgent = (async (request, response, next) => {
             let responseData = {
                 status: "SUCCESS",
                 message: "Agent  registered successfully",
-                //data: []
+                data: []
                             
             }; universalFunction.sendResponse(request, response, responseData, next);
            
