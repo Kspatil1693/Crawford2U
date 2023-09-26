@@ -6,13 +6,15 @@ const express = require("express");
 const app = express();
 
 const Port = process.env.PORT;
-
+//const Port='crawford2u.in'
 const agentRouter = require('./Routes/AgentRoutes/AgentRoute');
 const clientRouter = require('./Routes/ClientRoutes/ClientRoute');
 const categoriesRouter = require("./Routes/Categories-SubCategoriesRoutes/CategoriesRoute");
 const productRouter = require("./Routes/ProductRoutes/ProductRoute");
 const orderRouter = require("./Routes/OrderRoutes/OrderRoute");
-
+/*const corsOptions = {
+  origin: 'https://crawford2u.in'
+}*/
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
