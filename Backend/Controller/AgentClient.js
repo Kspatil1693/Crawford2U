@@ -3,7 +3,8 @@ const ClientDetails = require("../Models/ClientDetails");
 const universalFunction = require('../Functions/universalFunction');
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
-const secretyKey = "abcdefghijklmnopqrstuvwxyzabcdef";
+require('dotenv').config();
+const secretyKey = process.env.SECRETY_KEY;
 
 
 exports.registerAgent = (async (request, response, next) => {

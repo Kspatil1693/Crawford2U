@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "build": "babel . -d lib",
-    "start": "node --use_strict ./lib/AC_server.js",
-    "watch": "nodemon --exec \"npm run build && node lib/AC_Server.js\" -e js --ignore lib/"   
+     "start":"nodemon AC_Server.js" 
   },
   "keywords": [],
   "author": "",

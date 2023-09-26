@@ -1,6 +1,7 @@
 const AgentDetails = require("../Models/AgentDetails");
 const ClientDetails = require("../Models/ClientDetails");
-const secretyKey = "abcdefghijklmnopqrstuvwxyzabcdef";
+require('dotenv').config();
+const secretyKey = process.env.SECRETY_KEY;
 const jwt = require("jsonwebtoken");
 module.exports = {
   sendResponse: async function (request, response, responseData, next) {
