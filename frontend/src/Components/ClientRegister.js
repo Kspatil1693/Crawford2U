@@ -38,7 +38,7 @@ const ClientRegister = () => {
             email,password1, adharCard, panCard, buildingName, flatNumber,
             streetName, pinCode } = data;
         
-        const response = await fetch("https://crawford2u.onrender.com/client/clientregister", {
+        const response = await fetch("https://crawford-79w2.onrender.com/client/clientregister", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -71,7 +71,7 @@ const ClientRegister = () => {
             console.log("Successfully Registration");
             
       }
-      await response.send("/agentLogin");
+      await response.send("/clientLogin");
     }
 
   return (

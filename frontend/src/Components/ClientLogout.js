@@ -8,7 +8,7 @@ const ClientLogout = () => {
 
     const handleLogout = async () => { 
         console.log("email,phoneNumber,password", email, password, phoneNumber);
-        let result = await fetch("https://crawford2u.onrender.com/client/clientlogout", {
+        let result = await fetch("https://crawford-79w2.onrender.com/client/clientlogout", {
             method: 'post',
             body: JSON.stringify({email,phoneNumber, password }),
             headers: {
