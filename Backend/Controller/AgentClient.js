@@ -158,7 +158,7 @@ exports.registerClient = (async (request, response, next) => {
             clientDetailsCheck.firstName = firstName;
             clientDetailsCheck.middleName = middleName;
             clientDetailsCheck.lastName = lastName;
-            clientDetailsCheck.clientPhoneNumber = clientPhoneNumber;
+            clientDetailsCheck.phoneNumber = phoneNumber;
             clientDetailsCheck.whatsAppNumber = whatsAppNumber;
             clientDetailsCheck.adharCard = adharCard;
             clientDetailsCheck.panCard = panCard;
