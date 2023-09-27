@@ -1,5 +1,6 @@
 import React, { useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+
 const ClientLogin = () => {
   const navigate = useNavigate();
     const [data, setData] = useState({
@@ -13,7 +14,7 @@ const ClientLogin = () => {
     const handleSubmit = async (e) => { 
         e.preventDefault();
         const { email, phoneNumber, mpin } = data;
-        const response = await fetch("https://crawford-79w2.onrender.com/client/login", {
+        const response = await fetch("https://crawford-79w2.onrender.com/client/clientlogin", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -49,7 +50,7 @@ const ClientLogin = () => {
                       <input type="text" name="email" className="form-control" id="emailId" //autocomplete="off" 
                       onChange={handleInput}/>
             </div>
-            <div class="mb-1 data">
+            <div className="mb-1 data">
                 <label for="PhoneNumberId" className="form-label">
                     PhoneNumbe: </label>
                       <input type="text" name="phoneNumber" className="form-control" id="phoneNumberId" //autocomplete="off"
