@@ -66,7 +66,7 @@ exports.generateRegisterSchema={
 exports.generateClientRegisterSchema={
     type:"object",
     properties:{
-        clientPhoneNumber:{
+        phoneNumber:{
             type:"string",
             minLength:10,
             maxLength:10,
@@ -125,7 +125,7 @@ exports.generateClientRegisterSchema={
         errorMessage:"pincode must be required"
       }
     },
-    required: ["clientPhoneNumber","mpin"]
+    required: ["phoneNumber","mpin"]
 };
 exports.verifyLoginSchema = {
     type: "object",

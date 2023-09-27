@@ -135,10 +135,11 @@ exports.registerClient = (async (request, response, next) => {
             streetName,
             phoneNumber,
             agentCode,
+            agentPhoneNumber
             
         } = request.body;
        
-        const clientData = await ClientDetails.find({ clientPhoneNumber: clientPhoneNumber }).countDocuments();
+        const clientData = await ClientDetails.find({ phoneNumber: phoneNumber }).countDocuments();
         if (clientData > 0) {
             return response.status(409).send({
                 status: "FAILURE",
@@ -146,7 +147,7 @@ exports.registerClient = (async (request, response, next) => {
             })
         }
     
-        const phoneNumber1 = await AgentDetails.find({ phoneNumber: phoneNumber });
+        const phoneNumber1 = await AgentDetails.find({ agentPhoneNumber: agentPhoneNumber });
         console.log("All agent details here....", phoneNumber1[0]);
         request.data = phoneNumber1[0];
         console.log("code of agent is", request.data.code);
