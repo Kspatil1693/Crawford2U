@@ -117,7 +117,7 @@ exports.generateClientRegisterSchema={
         pattern: "^[A-Z,a-z]",
         errorMessage:"streetName must be required"
       },
-      pincode: {
+      pinCode: {
         type: "string",
         minLength:6, 
         maxLength:6,
