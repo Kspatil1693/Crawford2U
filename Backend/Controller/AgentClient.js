@@ -41,7 +41,7 @@ exports.registerAgent = (async (request, response, next) => {
             return agentCodeData;
             
         }
-        //console.log("agentCodeData....", pinCode.slice(3, 6));
+        console.log("agentCodeData....", pincode.slice(3, 6));
           
             
          let areaCodeLetter;
