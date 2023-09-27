@@ -20,7 +20,7 @@ const AgentRegister = () => {
         buildingName: '',
         flatNumber: '',
         streetName: '',
-        pincode: ''
+        pinCode: ''
     })
     const handleInput = (event) => { 
         setData({ ...data, [event.target.name]: event.target.value })
@@ -39,7 +39,7 @@ const AgentRegister = () => {
         const { firstName, middleName, lastName,
             phoneNumber, whatsAppNumber, alternativeNumber,
             email,password1, adharCard, panCard, buildingName, flatNumber,
-            streetName, pincode } = data;
+            streetName, pinCode } = data;
         
         const response = await fetch("https://crawford-79w2.onrender.com/agent/register", {
             method: "POST",
@@ -60,7 +60,7 @@ const AgentRegister = () => {
                 buildingName: buildingName,
                 flatNumber: flatNumber,
                 streetName: streetName,
-                pinCode: pincode
+                pinCode: pinCode
             })
         });
         const result = await response.json();
