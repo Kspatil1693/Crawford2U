@@ -125,7 +125,7 @@ exports.generateClientRegisterSchema={
         errorMessage:"pincode must be required"
       }
     },
-    required: ["phoneNumber","mpin"]
+    required: ["phoneNumber"]
 };
 exports.verifyLoginSchema = {
     type: "object",
@@ -149,7 +149,7 @@ exports.verifyLoginSchema = {
 exports.clientLoginSchema = {
     type: "object",
     properties: {
-        clientPhoneNumber: {
+        phoneNumber: {
             type: "string",
             minLength: 10,
             maxLength: 10,
@@ -162,7 +162,7 @@ exports.clientLoginSchema = {
             pattern: "^[0-9()-.s]+$"
         }
     },
-    required: ["clientPhoneNumber", "mpin"]
+    required: ["phoneNumber","mpin"]
 };
 
 exports.getAllAgentSchemas = {
@@ -213,7 +213,7 @@ exports.getOneClientSchemas = {
 
   type: "object",
   properties: {
-    clientPhoneNumber: {
+    phoneNumber: {
       type: "string",
       minLength: 10,
       maxLength: 10,
@@ -221,7 +221,7 @@ exports.getOneClientSchemas = {
     },
     
   },
-  required: ["clientPhoneNumber"],
+  required: ["phoneNumber"],
 };
 
 exports.updateAgentSchemas = {

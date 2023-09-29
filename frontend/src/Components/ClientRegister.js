@@ -16,7 +16,8 @@ const ClientRegister = () => {
         buildingName: '',
         flatNumber: '',
         streetName: '',
-        pinCode: '',
+      pinCode: '',
+        agentPhoneNumber:''
     
     })
     const handleInput = (event) => { 
@@ -36,7 +37,7 @@ const ClientRegister = () => {
         const { firstName, middleName, lastName,
             phoneNumber, whatsAppNumber, alternativeNumber,
             email,password1, adharCard, panCard, buildingName, flatNumber,
-            streetName, pinCode } = data;
+            streetName, pinCode,agentPhoneNumber } = data;
         
         const response = await fetch("https://crawford-79w2.onrender.com/client/clientregister", {
             method: "POST",
@@ -57,7 +58,8 @@ const ClientRegister = () => {
                 buildingName: buildingName,
                 flatNumber: flatNumber,
                 streetName: streetName,
-                pinCode: pinCode,
+              pinCode: pinCode,
+                agentPhoneNumber:agentPhoneNumber
                           })
         });
         const result = await response.json();
@@ -125,7 +127,7 @@ const ClientRegister = () => {
                   <div className="mb-1 register">
                 <label htmlFor="Password1Id" className="form-label">
                     Password</label>
-                      <input type="password" name="mpin" className="form-control" id="password1Id" //autoComplete='off'
+                      <input type="password" name="password1" className="form-control" id="password1Id" //autoComplete='off'
                  onChange={handleInput }/>
             </div>
             <div className="mb-1 register">
