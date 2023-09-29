@@ -28,14 +28,15 @@ exports.registerAgent = (async (request, response, next) => {
             streetName,
             code
         } = request.body;
-        console.log(request.body.pinCode)
-        const agentData = await AgentDetails.find({ phoneNumber: phoneNumber }).countDocuments();
+        
+        const agentData = await AgentDetails.find({ phoneNumber: phoneNumber }).countDocuments()
         if (agentData > 0) {
             return response.status(409).send({
                 status: "FAILURE",
                 message: "Agent mobile number already exist"
             })
         }
+        console.log("agentData....",agentData)
         if (pinCode && typeof pinCode === 'string' && pinCode.length >= 6) {
             var agentCodeData = pinCode.slice(3, 6);
             return agentCodeData;
@@ -44,7 +45,7 @@ exports.registerAgent = (async (request, response, next) => {
         console.log("agentCodeData....", pinCode.slice(3, 6));
           
             
-         let areaCodeLetter;
+         var areaCodeLetter;
         if (pinCode >= 400001 && pinCode <= 400010) {
             areaCodeLetter = "A";
         } else if (pinCode >= 400011 && pinCode <= 400020) {
@@ -134,6 +135,7 @@ exports.registerClient = (async (request, response, next) => {
             buildingName,
             streetName,
             phoneNumber,
+            code,
             agentCode,
             agentPhoneNumber
             
@@ -150,8 +152,9 @@ exports.registerClient = (async (request, response, next) => {
         const phoneNumber1 = await AgentDetails.find({ agentPhoneNumber: agentPhoneNumber });
         console.log("All agent details here....", phoneNumber1[0]);
         request.data = phoneNumber1[0];
-        console.log("code of agent is", request.data.code);
-        const pindata = request.data.code;
+        console.log("code of agent is", request.data.firstName);
+        const pindata = request.data.firstName;
+      
 
         if (pindata.slice(1, 4) === pincode.slice(3, 6)) {
             const clientDetailsCheck = new ClientDetails();
@@ -165,7 +168,7 @@ exports.registerClient = (async (request, response, next) => {
             clientDetailsCheck.email = email;
             clientDetailsCheck.password = mpin;
             clientDetailsCheck.pincode = pincode;
-            clientDetailsCheck.code = request.data.code;
+            clientDetailsCheck.code = agentCode;
             clientDetailsCheck.buildingName = buildingName;
             clientDetailsCheck.streetName = streetName;
             console.log("clientDetails", clientDetailsCheck);
