@@ -125,7 +125,7 @@ const ClientRegister = () => {
                   <div className="mb-1 register">
                 <label htmlFor="Password1Id" className="form-label">
                     Password</label>
-                      <input type="password" name="password1" className="form-control" id="password1Id" //autoComplete='off'
+                      <input type="password" name="mpin" className="form-control" id="password1Id" //autoComplete='off'
                  onChange={handleInput }/>
             </div>
             <div className="mb-1 register">
@@ -162,6 +162,12 @@ const ClientRegister = () => {
                 <label htmlFor="PincodeId" className="form-label">
                     Pincode</label>
                       <input type="text" name="pinCode" className="form-control" id="PincodeId" //autocomplete="off"
+                       onChange={handleInput }/>
+          </div>
+          <div className="mb-1 register">
+                <label htmlFor="agentPhoneNumberId" className="form-label">
+                    agentPhoneNumber</label>
+                      <input type="text" name="agentPhoneNumber" className="form-control" id="agentPhoneNumberId" //autocomplete="off"
                        onChange={handleInput }/>
                   </div>
                   
