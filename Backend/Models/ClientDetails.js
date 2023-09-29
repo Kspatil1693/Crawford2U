@@ -22,7 +22,7 @@ const clientSchemas = new mongoose.Schema({
         type: String,
         required: ""
     },
-    clientPhoneNumber: {
+    phoneNumber: {
         type: String,
         required: ""
     },

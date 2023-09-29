@@ -1,8 +1,9 @@
-const AgentDetails = require("../Models/AgentDetails");
+
 const ClientDetails = require("../Models/ClientDetails");
 const universalFunction = require('../Functions/universalFunction');
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
+var AgentDetails = require("../Models/AgentDetails");
 require('dotenv').config();
 const secretyKey = process.env.SECRETY_KEY;
 
@@ -149,11 +150,11 @@ exports.registerClient = (async (request, response, next) => {
             })
         }
     
-        const phoneNumber1 = await AgentDetails.find({ agentPhoneNumber: agentPhoneNumber });
+       const phoneNumber1 = await AgentDetails.find({ agentPhoneNumber: agentPhoneNumber });
         console.log("All agent details here....", phoneNumber1[0]);
         request.data = phoneNumber1[0];
-        console.log("code of agent is", request.data.firstName);
-        const pindata = request.data.firstName;
+        console.log("code of agent is", request.data.code);
+        const pindata = request.data.code;
       
 
         if (pindata.slice(1, 4) === pincode.slice(3, 6)) {
@@ -168,7 +169,7 @@ exports.registerClient = (async (request, response, next) => {
             clientDetailsCheck.email = email;
             clientDetailsCheck.password = mpin;
             clientDetailsCheck.pincode = pincode;
-            clientDetailsCheck.code = agentCode;
+            clientDetailsCheck.code = pindata;
             clientDetailsCheck.buildingName = buildingName;
             clientDetailsCheck.streetName = streetName;
             console.log("clientDetails", clientDetailsCheck);
@@ -185,7 +186,7 @@ exports.registerClient = (async (request, response, next) => {
             },
                
             );
-        } else {
+       } else {
             let responseData = {
                 status: "FAILURE",
                 message: "Client pincode not match ",
